@@ -8,17 +8,22 @@ echo -e "hostname: \c" ; hostname
 # print begin date
 echo -e "begin date: \c" ; date
 
-# clue image list
-# imagelist=(redis-benchmark json-server ttrss frontroute textract  apt-cacher  disco  httpie  phpvirtualbox  archeologit findgithubemail webgrind quassel-core  vboxwebsrv streamripper  php-redis-server  adminer kpcli psocksd  sculpin polipo  h5ai)
+# radial image list
+#imagelist=(radial/busyboxplus radial/log.io radial/owncloud radial/hub-base radial/spoke-base radial/etcd radial/coreos-pxe radial/distro-base radial/clarity radial/dns radial/nginx radial/admin radial/distro radial/postgresql radial/axle-base radial/sshd)
 
-imagelist=(busybox alpine)
+# pinterb image list
+# imagelist=(pinterb/ubuntu-python-dev pinterb/swagger-editor pinterb/ubuntu-base pinterb/ubuntu-python pinterb/ubuntu-perl pinterb/ubuntu-golang pinterb/ubuntu-perl-mojo pinterb/ubuntu-perl-dev pinterb/ubuntu-python-falcon pinterb/json pinterb/ansible)
 
-repository=kiwenlau
+# guihem and joaodubas image list
+#imagelist=(guilhem/vagrant-ubuntu guilhem/jenkins-slave guilhem/jenkins-slave-python guilhem/jenkins-slave-deb-build guilhem/apt-get-install guilhem/dh-venv joaodubas/orientdb joaodubas/droneio joaodubas/openjdk joaodubas/gocd-server joaodubas/fig joaodubas/python-venv joaodubas/nginx-proxy joaodubas/common joaodubas/arangodb joaodubas/nodejs joaodubas/multilevel joaodubas/nodejs-base joaodubas/spidermonkey joaodubas/levelhud joaodubas/nodejs-unstable joaodubas/devpi joaodubas/gocd-agent joaodubas/gocd-base joaodubas/leveldb joaodubas/oracle-jdk joaodubas/droneio-wall joaodubas/devmachine)
+
+# sequenceiq imagelist
+imagelist=(sequenceiq/hadoop-docker sequenceiq/spark sequenceiq/ambari sequenceiq/hadoop-ubuntu sequenceiq/ambari-shell sequenceiq/drill sequenceiq/dnsmasq sequenceiq/socat sequenceiq/phoenix sequenceiq/kylin sequenceiq/tez sequenceiq/cloudbreak sequenceiq/serf sequenceiq/baywatch-client sequenceiq/uaa sequenceiq/status. sequenceiq.com sequenceiq/baywatch sequenceiq/pam sequenceiq/periscope sequenceiq/consul sequenceiq/munchausen sequenceiq/uluwatu-bin sequenceiq/sultans-bin sequenceiq/ambari-warmup sequenceiq/cb-shell)
 
 for image in ${imagelist[*]};
 do
-  echo -e "\033[31m \ndocker pull $repository/$image \033[0m"
-  docker pull $repository/$image
+  echo -e "\033[31m \ndocker pull $image \033[0m"
+  docker pull $image
 done
 
 # print end date
